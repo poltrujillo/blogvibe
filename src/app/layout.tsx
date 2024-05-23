@@ -3,6 +3,7 @@ import { Lato } from 'next/font/google';
 import '@/styles/globals.css';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/navbar';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const fontSans = Lato({
   subsets: ['latin'],
@@ -28,8 +29,15 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Navbar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

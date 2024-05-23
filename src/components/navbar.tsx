@@ -5,6 +5,7 @@ import Logo from './logo';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBlog, faCamera, faUser } from '@fortawesome/free-solid-svg-icons';
+import { ModeToggle } from './mode-toggle';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,6 +66,7 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      <ModeToggle />
     </nav>
   );
 }
