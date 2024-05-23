@@ -47,6 +47,9 @@ export default async function Posts() {
                       {user.website}
                     </a>
                   </p>
+                  <Link className="underline" href={`/users/${user.id}`}>
+                    Visit user profile
+                  </Link>
                 </div>
               )}
             </li>

@@ -50,7 +50,7 @@ export default function Navbar() {
           </li>
           <li className="mt-3 md:mt-0">
             <Link
-              href="/about"
+              href="/albums"
               className="flex items-center gap-2 hover:opacity-70 transition-colors duration-300"
             >
               <FontAwesomeIcon icon={faCamera} /> Albums
@@ -58,7 +58,7 @@ export default function Navbar() {
           </li>
           <li className="mt-3 md:mt-0">
             <Link
-              href="/contact"
+              href="/users"
               className="flex items-center gap-2 hover:opacity-70 transition-colors duration-300"
             >
               <FontAwesomeIcon icon={faUser} /> Users
