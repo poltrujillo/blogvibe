@@ -2,6 +2,7 @@ import { postsService } from '@/services/posts';
 import type { Comment, Post, User } from '@/types';
 import { Card } from '@/components/ui/card';
 import { usersService } from '@/services/users';
+import Link from 'next/link';
 
 export default async function DetailedPost({
   params,
@@ -32,12 +33,12 @@ export default async function DetailedPost({
         </p>
         <p>
           Website:{' '}
-          <a
+          <Link
             href={`http://${user.website}`}
             className="text-blue-500 underline"
           >
             {user.website}
-          </a>
+          </Link>
         </p>
       </Card>
 

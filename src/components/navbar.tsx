@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full flex flex-wrap items-center justify-around p-5 shadow-lg fixed bg-background">
+    <nav className="w-full flex flex-wrap items-center justify-around p-5 shadow-lg fixed bg-background z-50">
       <Link href="/" className="hover:scale-105 transition duration-300">
         <Logo color="secondary" />
       </Link>

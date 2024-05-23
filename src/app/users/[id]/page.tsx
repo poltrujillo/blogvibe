@@ -1,15 +1,19 @@
 import { usersService } from '@/services/users';
+import { Card } from '@/components/ui/card';
+import { Album, Post, User } from '@/types';
 
 export default async function DetailedUser({
   params,
 }: {
   params: { id: number };
 }) {
-  const user = await usersService.getUserById(params.id);
+  const user: User = await usersService.getUserById(params.id);
+  const albums: Album[] = await usersService.getUserAlbums(params.id);
+  const posts: Post[] = await usersService.getUserPosts(params.id);
   return (
     <main className="py-20 flex flex-col items-center gap-10">
       <h1 className="text-3xl font-bold text-center mt-10">User Profile</h1>
-      <div className="bg-white shadow rounded-lg p-10 w-full max-w-2xl">
+      <div className="bg-background shadow border rounded-lg p-10 w-full max-w-2xl">
         <div className="flex flex-col items-center mb-10">
           <h2 className="text-2xl font-semibold mb-2">{user.name}</h2>
           <p className="text-gray-600 mb-2">@{user.username}</p>
@@ -48,6 +52,25 @@ export default async function DetailedUser({
             </a>
           </p>
         </div>
+      </div>
+
+      <div className="bg-background shadow border rounded-lg p-10 w-full max-w-2xl mt-10">
+        <h2 className="text-2xl font-semibold mb-5">Posts</h2>
+        {posts.map((post) => (
+          <Card key={post.id} className="mb-5 p-5 border rounded-lg shadow">
+            <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+            <p>{post.body}</p>
+          </Card>
+        ))}
+      </div>
+
+      <div className="bg-background shadow border rounded-lg p-10 w-full max-w-2xl mt-10">
+        <h2 className="text-2xl font-semibold mb-5">Albums</h2>
+        {albums.map((album) => (
+          <Card key={album.id} className="mb-5 p-5 border rounded-lg shadow">
+            <h3 className="text-xl font-semibold mb-2">{album.title}</h3>
+          </Card>
+        ))}
       </div>
     </main>
   );
