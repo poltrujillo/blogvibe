@@ -9,7 +9,7 @@ export default async function Posts() {
 
   return (
     <main className="py-20 flex flex-col items-center gap-10">
-      <h1 className="text-3xl font-bold text-center">Posts</h1>
+      <h1 className="text-3xl font-bold text-center mt-10">Posts</h1>
       <ul className="w-2/3">
         {posts.map((post) => {
           const user = users.find((user) => user.id === post.userId);

@@ -11,9 +11,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full flex flex-wrap items-center justify-around p-5 bg-primary">
+    <nav className="w-full flex flex-wrap items-center justify-around p-5 shadow-lg fixed bg-background">
       <Link href="/" className="hover:scale-105 transition duration-300">
-        <Logo />
+        <Logo color="secondary" />
       </Link>
       <button
         className="block md:hidden text-primary-foreground focus:outline-none"
@@ -39,7 +39,7 @@ export default function Navbar() {
           isMenuOpen ? 'block' : 'hidden'
         } w-full md:flex md:items-center md:w-auto`}
       >
-        <ul className="flex flex-col md:flex-row md:gap-5 text-primary-foreground md:items-center">
+        <ul className="flex flex-col md:flex-row md:gap-5 text-foreground md:items-center">
           <li className="mt-3 md:mt-0">
             <Link
               href="/posts"
