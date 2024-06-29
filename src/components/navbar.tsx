@@ -16,7 +16,7 @@ export default function Navbar() {
         <Logo color="secondary" />
       </Link>
       <button
-        className="block md:hidden text-primary-foreground focus:outline-none"
+        className="block md:hidden text-secondary-foreground focus:outline-none"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <svg
